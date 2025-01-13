@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page06_table</title>
+    </head>
+    <body>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>table태그</title>
+            </head>
+            <body>
+                <h1>table태그</h1>
+                <!-- 3행2열 -->
+                <table border="1" width="200" height="150">
+                    <caption>
+                        월별 매출 통계
+                    </caption>
+                    <!-- 1행 -->
+                    <tr>
+                        <th>Month</th>
+                        <!-- th: 테이블 제목태그 (bold,중앙정렬) -->
+                        <th>Savings</th>
+                    </tr>
+                    <!-- 2행 -->
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                    <!-- 3행 -->
+                    <tr>
+                        <td>February</td>
+                        <td>$80</td>
+                    </tr>
+                </table>
+                <hr color="red" />
+                <h2>우리반 연락처</h2>
+                <!-- 3행4열 -->
+                <table
+                    border="1"
+                    width="80%"
+                    height="180"
+                    align="center"
+                    bgcolor="beige"
+                    bordercolor="purple"
+                    cellpadding="20"
+                    cellspacing="10"
+                    background="img/background.png"
+                >
+                    <thead>
+                        <tr bgcolor="orange">
+                            <th>번호</th>
+                            <th>이름</th>
+                            <th>연락처</th>
+                            <th>주소</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td bgcolor="skyblue">1</td>
+                            <td bgcolor="pink">홍길동</td>
+                            <td background="img/cup.png">010-1111-1111</td>
+                            <td>서울 강남구 삼성동</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>김철수</td>
+                            <td>010-2222-2222</td>
+                            <td>서울 강남구 역삼동</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </body>
+        </html>
+    </body>
+</html>

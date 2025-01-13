@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>다양한 입력폼</title>
+    </head>
+    <body>
+        <h1>입력 폼</h1>
+        <form action="join.jsp" name="frm" id="frm" method="get">
+            <!-- method="post" enctype="multipart/form-data"> -->
+            이름:<input type="text" name="name" /><br />
+            사진:<input type="file" name="photo" /><br />
+            <!--  파일을 업로드하려면 form태그에 method는 post로 지정하고,
+                enctype="multipart/form-data"로 지정해야 한다
+            -->
+            <!-- 
+                 단일선택: radio
+                 다중선택: checkbox
+            -->
+            성별:
+            <input type="radio" name="gender" value="Male" />남자
+            <input type="radio" name="gender" value="Female" checked="checked" />여자
+            <br />
+            취미:
+            <input type="checkbox" name="hobby" value="reading" checked />독서
+            <input type="checkbox" name="hobby" value="music" />음악감상
+            <input type="checkbox" name="hobby" value="movie" />영화감상
+            <br />
+            드롭다운리스트:
+            <select name="job">
+                <option value="">::직업을 선택하세요::</option>
+                <option value="backend">백엔드개발자</option>
+                <option value="frontend">프런트엔드개발자</option>
+                <option value="engineer">시스템엔지니어</option>
+            </select>
+            <br />
+            <select name="lang" multiple size="6">
+                <option value="">::사용가능 언어::</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="SQL">SQL</option>
+                <option value="C">C</option></select
+            ><br />
+            자기소개:
+            <textarea name="intro" rows="7" cols="50" placeholder="자기소개를 100자 이내로 해주세요"></textarea>
+            <br />
+            히든필드:
+            <input type="hidden" name="secret" value="TopSecret" />
+            <br />
+            <input type="submit" value="회원가입" />
+            <input type="button" value="일반버튼" onclick="alert('안녕??')" />
+            <input type="reset" value="다시쓰기" />
+            <button>전송버튼</button>
+            <button type="reset">리셋버튼</button>
+            <button type="button">일반버튼</button>
+            <hr color="red" width="500" size="10" align="left" />
+            <a href="javascript:alert('Bye Bye~~')"><img src="img/login.png" /></a>
+            <input type="image" src="img/login.png" />
+            <!-- image버튼은 submit기능을 갖는다 -->
+        </form>
+    </body>
+</html>

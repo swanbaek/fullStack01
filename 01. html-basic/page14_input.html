@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>입력양식</title>
+        <style>
+            input {
+                width: 60%;
+                height: 35px;
+            }
+            button {
+                padding: 10px;
+            }
+            label {
+                width: 25%;
+                height: 35px;
+                /* background-color: aqua; */
+                display: inline-block;
+            }
+            /* inline요소들은 width,height를 주어도 적용되지 않는다.
+		인라인 요소는 일반적으로 콘텐츠의 크기에 맞게 자동으로 조절되기 때문에 명시적으로 width와 height를 지정하는 것이 무의미합니다. 
+          이런 경우 display속성값으로 inline-block을 주면
+          inline,block특징을 가질 수 있다
+        */
+            fieldset {
+                width: 60%;
+                margin: auto;
+            }
+            h1 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML5에 추가된 입력 양식</h1>
+        <form action="join.jsp" method="get">
+            <fieldset>
+                <legend>::회원가입::</legend>
+                <label for="mymail2">이메일</label>
+                <input type="email" name="mymail" id="mymail2" multiple required /><br /><br />
+                <!-- multiple속성을 추가하면 콤마(,)로 연결하여 여러개 이메일 입력 가능 -->
+
+                <label for="homepage">홈페이지</label>
+                <input type="url" name="homepage" id="homepage" placeholder="URL형식으로 기술하세요" />
+                <!-- url형식이 아니면 에러 메시지 출력 -->
+                <br /><br />
+                <label for="phone">연락처</label>
+                <input type="tel" name="phone" id="phone" />
+                <br /><br />
+                <!-- 연락처 형태의 값이 아니어도 에러출력을 하지는 않음
+                다만 모바일 기기에서 tel타입으로 지정하면 숫자 패드가 나타나 입력받음
+             -->
+                <label for="birth">생년월일</label>
+                <input type="date" name="birth" id="birth" min="2022-01-01" max="2023-10-31" />
+                <br /><br />
+                <label for="birthtime">시분초</label>
+                <input type="time" name="birthtime" id="birthtime" />
+                <br /><br />
+
+                <label for="age">나이</label>
+                <input type="number" name="age" id="age" min="1" max="150" />
+                <br /><br />
+                <!-- 
+                색상: red, green, blue...
+                16진수: 0~15, 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+                #afc
+                #aa09cf
+             -->
+                <label for="cr">좋아하는 색상</label>
+                <input type="color" name="cr" id="cr" value="#aa47ff" />
+                <br /><br />
+
+                <label for="rgb">RGB범위</label>
+                <input type="range" name="rgb" id="rgb" min="0" max="255" value="50" />
+                <br /><br />
+                <br /><br />
+                <div style="text-align: center">
+                    <button>회원가입</button>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
