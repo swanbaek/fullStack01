@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page18_selector.html</title>
+        <style>
+            /* 1. 태그 선택자 */
+            div,
+            p {
+                color: darkgreen;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1.2em;
+                font-weight: 700;
+            }
+            /* 2. 클래스 선택자: 앞에 마침표(.)을 붙이고 클래스명을 기술 
+        class가 c1인 요소를 선택해서
+        글자색: purple
+        안쪽여백: 1em
+        바깥여백: 0.8em
+        배경색: 알아서
+        */
+            .c1 {
+                color: purple;
+                background-color: dodgerblue;
+                padding: 1em;
+                margin: 0.8em;
+            }
+            #dv1 {
+                padding: 1em;
+                border: 3px solid tomato;
+            }
+            /* id가 dv2인 요소 선택해서
+           테두리를 두께 5px dotted 색상 알아서
+           안쪽 여백 0.5em
+           바깥 여백 0.8em
+        */
+            #dv2 {
+                border: dotted 5px darkblue;
+                padding: 0.5em;
+                margin: 0.8em;
+            }
+
+            /* 아이디 선택자> 클래스 선택자 > 태그 선택자 <= 우선순위 */
+        </style>
+    </head>
+    <body>
+        <h1>기본선택자-(태그선택자, 클래스선택자, 아이디선택자)</h1>
+        <!-- id: 한 페이지 내에 unique한 값을 가져야 함
+        class: 한 페이지 내에 동일한 이름이 여러 개 나와도 된다
+    -->
+        <div id="dv1">div#dv1</div>
+        <div id="dv2">div#dv2</div>
+        <div class="c1">div.c1</div>
+        <p class="c1">p.c1</p>
+        <p id="p1" class="c2">p#p1 .c2</p>
+    </body>
+</html>

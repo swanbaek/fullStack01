@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 처음 링크시: 방문전 */
+            a:link {
+                color: red;
+                text-decoration: none;
+            }
+            /* 링크: 방문후 */
+            a:visited {
+                color: green;
+            }
+            /* 링크: 마우스클릭시 */
+            a:active {
+                background-color: yellowgreen;
+            }
+            /* 마우스오버시 */
+            a:hover {
+                color: salmon;
+                font-size: 1.2em;
+            }
+            /* 비활성화된 input요소 선택 */
+            input:disabled {
+                background-color: gray;
+            }
+            /* 입력포커스가 왔을 때 */
+            input:focus {
+                background-color: lawngreen;
+            }
+            /*버튼에 마우스오버시 배경색 yellow 글자색 blue로 주세요  */
+            button:hover {
+                background-color: yellow;
+                color: blue;
+                font-weight: bold;
+            }
+            /* 클래스가 google인 요소 선택해서
+        배경색 알아서 주세요 */
+            a.google {
+                background-color: turquoise;
+            }
+            /* class가 google이 아닌 a요소를 선택해서
+        배경색을 bisque로 주세요 */
+            /* 선택자:not(배제할요소) */
+            a:not(.google) {
+                background-color: bisque;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>가상 선택자</h1>
+        <p>특정한 가상 액션 상황을 가정한 선택자</p>
+        <h2 class="google">하이퍼링크 스타일</h2>
+        <a href="http://www.naver.com">네이버</a><br /><br />
+        <a href="http://www.google.com" class="google">구글</a><br /><br />
+        <a href="http://www.daum.net">다음</a><br /><br />
+        <a href="http://www.nate.com">네이트</a><br /><br />
+
+        <hr color="blue" />
+        user: <input type="text" value="apple" disabled /><br />
+        pass: <input type="password" name="pw" id="pw" /><br />
+        <button>로그인하기</button>
+    </body>
+</html>

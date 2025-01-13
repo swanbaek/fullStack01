@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS3.0</title>
+        <style type="text/css">
+            /* css주석 
+        선택자{
+            속성명:속성값;
+            속성명2:속성값2;
+
+        }
+        
+        */
+            * {
+                color: blue;
+                /* 글자색: 파랑색 */
+            }
+            body {
+                background-color: bisque; /*배경색*/
+                font-family: 궁서체, Verdana; /*서체*/
+                font-size: 30px;
+            }
+            /* b태그를 선택해서
+        - 글자색:tomato 
+        - 글자크기:33px
+        - 배경색: lightblue
+        */
+            b {
+                color: tomato;
+                font-size: 33px;
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+        [1] style태그로 html파일 내부에 정의하는 방법
+        [2] 외부파일에 정의한 뒤 html에서 참조하는 방법
+            => <link>태그 활용
+            => @import를 활용
+        [3] html태그 안에 인라인 스타일로 정의하는 방법    
+     -->
+        안녕하세요? <br />
+        <b>CSS3.0</b>을 배워봅시다
+        <p>
+            HTML의 보완적 요소가 CSS입니다
+            <b>HTML5 CSS3.0</b>
+        </p>
+    </body>
+</html>

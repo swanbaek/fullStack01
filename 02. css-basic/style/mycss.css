@@ -1,0 +1,21 @@
+/* mycss.css */
+body {
+    color: rgb(87, 85, 222);
+    font-size: 1.5em;
+    /* 1em: 16px
+       2em: 32px; 
+    */
+}
+/* 
+div선택해서
+서체: sans-serif
+글자색: 알아서
+바깥여백: 1em
+배경색: 알아서
+ */
+div {
+    font-family: sans-serif, Verdana, Geneva, Tahoma;
+    color: brown;
+    margin: 1em;
+    background-color: cadetblue;
+}
