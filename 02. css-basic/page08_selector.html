@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page08_selector.html</title>
+        <style>
+            body * {
+                border: 1px solid silver;
+                padding: 10px;
+            }
+            /* #d1의 자식 중 p태그를 선택해서 배경색 달리주세요 */
+            /* 자식선택자: 선택자>요소 */
+            #d1 > p {
+                background-color: coral;
+            }
+
+            /* #d2의 자손 p를 선택해서 테두리를 달리 주세요 */
+            /* 자손선택자(자식을 포함한 손자, 증손자...자손을 선택) 
+            선택자 요소
+        */
+            #d2 p {
+                border: thick dashed blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>계층선택자-(자식,자손 선택자)</h1>
+
+        <div id="d1">
+            #d1
+            <p>감자1</p>
+            <div id="d11">
+                #d11
+                <p>감자2</p>
+                <p>고구마</p>
+            </div>
+        </div>
+
+        <div id="d2">
+            #d2
+            <p>감자3</p>
+            <div id="d22">
+                #d22
+                <p>감자4</p>
+                <p>고구마</p>
+            </div>
+        </div>
+    </body>
+</html>

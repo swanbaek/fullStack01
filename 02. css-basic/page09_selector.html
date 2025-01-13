@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page09_selector.html</title>
+        <style>
+            p:nth-child(1) {
+                background-color: beige;
+            }
+            p:nth-child(2) {
+                font-size: 100%;
+                background-color: pink;
+            }
+            p:nth-child(3) {
+                font-size: 150%;
+                background-color: lightgreen;
+            }
+            p:nth-child(4) {
+                font-size: 200%;
+                background-color: orange;
+            }
+            p:nth-child(2n) {
+                border: thick dashed lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>nth-child() 활용- 자식을 선택할때 사용</h1>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </body>
+</html>

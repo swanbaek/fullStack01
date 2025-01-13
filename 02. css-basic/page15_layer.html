@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page30_layer</title>
+        <style>
+            body {
+                padding: 2em;
+            }
+            div:not(#wrap) {
+                width: 100px;
+                height: 100px;
+                /* background-color: aqua; */
+            }
+            #wrap {
+                position: relative;
+                border: 1px solid red;
+                width: 100%;
+                height: 500px;
+            }
+            .z-1 {
+                position: absolute;
+                background-color: magenta;
+                left: 50px;
+                top: 50px;
+                z-index: 900;
+            }
+            .z-2 {
+                position: absolute;
+                background-color: lawngreen;
+                left: 80px;
+                top: 80px;
+                z-index: 8;
+            }
+            .z-3 {
+                position: absolute;
+                background-color: yellow;
+                left: 110px;
+                top: 110px;
+                z-index: 7;
+            }
+            .z-4 {
+                position: absolute;
+                background-color: violet;
+                left: 140px;
+                top: 140px;
+                z-index: 6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>레이어를 구성해보자</h1>
+        <div id="wrap">
+            <div id="" class="z-1">레이어: z-1</div>
+            <div id="" class="z-2">레이어: z-2</div>
+            <div id="" class="z-3">레이어: z-3</div>
+            <div id="" class="z-4">레이어: z-4</div>
+        </div>
+    </body>
+</html>
+<!-- ex38layer.html -->
