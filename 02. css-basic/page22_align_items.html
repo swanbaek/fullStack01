@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="Generator" content="EditPlus®" />
+        <meta name="Author" content="" />
+        <meta name="Keywords" content="" />
+        <meta name="Description" content="" />
+        <title>page37_align_items.html</title>
+        <style>
+            .container {
+                display: flex;
+                background-color: silver;
+                border: 1px solid black;
+                margin-bottom: 20px;
+                flex-flow: row wrap;
+                width: 950px;
+                height: 250px;
+            }
+            .box {
+                background-color: violet;
+                padding: 5px 45px;
+                margin: 5px;
+            }
+            /*
+		  align-items : 교차축을 기준으로 플렉스 항목을 정렬함	
+		  flex-start: 교차축 시작점에 맞춰 배치
+		  flex-end : 교차축 끝점에 맞춰 배치
+		  center: 교차축 중앙
+		  baseline : 교차축 문자 기준선에 맞춰 배치
+		  stretch: 항목을 늘려 교차축에 가득차게 배치
+		*/
+            .opt1 {
+                align-items: flex-start;
+            }
+            .opt2 {
+                align-items: flex-end;
+            }
+            .opt3 {
+                align-items: center;
+            }
+            .opt4 {
+                align-items: baseline;
+            }
+            .opt5 {
+                align-items: stretch;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container opt5">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+    </body>
+</html>

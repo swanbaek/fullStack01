@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Transform Example</title>
+        <style>
+            body {
+                margin: 2em;
+                padding: 2em;
+            }
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: rgb(9, 46, 58);
+                margin: 1em;
+            }
+            .box {
+                transition: transform 0.5s ease; /* 변형 시 애니메이션 효과 */
+            }
+            .box:hover {
+                transform: scale(1.2) rotate(45deg); /* 확대하고 45도 회전 */
+            }
+
+            .box1 {
+                background-color: brown;
+                transition: transform 0.5s linear;
+            }
+            .box1:hover {
+                transform: translate(100px, 50px); /*x:100px, y:50px 축으로 이동*/
+            }
+
+            .box2,
+            .box3,
+            .box4 {
+                background-color: green;
+                transition: transform 0.5s linear;
+            }
+            .box2:hover {
+                transform: scale(2, 1.5); /*너비: 2배, 높이 :1.5배 늘어남*/
+            }
+            .box3:hover {
+                background-color: hotpink;
+                transform: rotate(30deg); /*30도 회전*/
+            }
+            .box4:hover {
+                background-color: lightgreen;
+                transform: skew(30deg, 30deg); /*x:30도, y30도 정해진 각도만큼 왜곡*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </body>
+</html>

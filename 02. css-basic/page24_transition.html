@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                transition-property: background-color, color, width;
+                transition-duration: 1s, 500ms, 2s;
+                /* background-color: 1초동안 전환, color: 0.5초간 글자색상 전환, width: 2초 동안 너비 전환 */
+                transition-delay: 1s;
+                /* 모든 전환이 시작되기 전에 1초의 대기 시간이 추가됩니다. */
+            }
+
+            .box:hover {
+                background-color: pink;
+                color: white;
+                width: 400px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 
+            transition: 변화하는데 걸리는 시간/프로퍼티 변화방법/딜레이
+                transition-duration :변화하는데 걸리는 시간 [초(s)|밀리 초(ms)]
+                transition-property : 프로퍼티 [all|none|프로퍼티명]
+                transition-delay: 딜레이
+                transition-timing-function : 변화 방법 [ease|linear|ease-in|ease-out|ease-in-out|cubic-bizer()]
+                
+         -->
+        <div class="box">Transition(전환)</div>
+    </body>
+</html>

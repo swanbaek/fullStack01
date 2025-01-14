@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>font_text</title>
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: medium;
+                /*1em: 16px, 글자단위 (px,pt, em, rem), small, medium, large*/
+                font-weight: lighter; /*400(디폴트) 100~900, bold, bolder*/
+                color: navy;
+                text-align: left; /*left(default),center,right*/
+            }
+        </style>
+    </head>
+    <body>
+        <h1>글자 또는 텍스트 스타일</h1>
+        <h2>기본</h2>
+        <h2 style="text-decoration: overline">윗줄</h2>
+        <h2 style="text-decoration: underline">밑줄</h2>
+        <h2 style="text-decoration: line-through">취소선</h2>
+        <a href="page01.html" style="text-decoration: none">일반 텍스트</a>
+        <hr />
+        <h1 style="text-shadow: 4px 2px 7px skyblue">안녕 CSS- TEXT Shadow</h1>
+        <!-- text-shadow: x,y, 번짐크기 색상 순서로 지정 -->
+        <table border="1" style="width: 80%; margin: auto; height: 400px">
+            <tr>
+                <td width="50%" style="vertical-align: bottom">수직정렬</td>
+                <td width="50%" style="text-align: center">수평정렬</td>
+                <!-- 수평정렬: text-align (left, center, right) 
+                 수직정렬: vertical-align (top, middle, bottom)            
+            --></tr>
+            <tr>
+                <td width="50%">
+                    <!-- text-transform   (capitalize, uppercase, lowercase) -->
+                    <div id="a1" style="text-transform: capitalize">abc(첫글자를 대문자로)</div>
+                    <div id="a2" style="text-transform: uppercase">abc(모두 대문자로)</div>
+                    <div id="a3" style="text-transform: lowercase">abcDEF(모두 소문자로)</div>
+                </td>
+                <td width="50%">
+                    문자간격<br />
+                    <span style="letter-spacing: 10px">문자간격</span><br />
+                    <span style="word-spacing: 20px">단어 간격</span>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

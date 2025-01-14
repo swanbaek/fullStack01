@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            .container .bar {
+                width: 300px;
+                margin: 5px 5px;
+                background-color: tomato;
+                transition-property: width;
+                transition-duration: 3s;
+                color: aliceblue;
+            }
+
+            .container .bar:hover {
+                width: 1000px;
+            }
+
+            .bar:nth-child(1) {
+                transition-timing-function: linear;
+            }
+
+            .bar:nth-child(2) {
+                transition-timing-function: ease;
+            }
+
+            .bar:nth-child(3) {
+                transition-timing-function: ease-in;
+            }
+
+            .bar:nth-child(4) {
+                transition-timing-function: ease-out;
+            }
+
+            .bar:nth-child(5) {
+                /* transition-timing-function: ease-in-out; */
+                transition-timing-function: cubic-bezier(1s, 2s, 3s, 4s);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="bar">linear: 일정한 속도로</div>
+            <div class="bar">ease : 느리게-빠르게-느리게</div>
+            <div class="bar">ease-in: 느리게-빠르게</div>
+            <div class="bar">ease-out: 빠르게-느리게</div>
+            <div class="bar">ease-in-out: 느리게-빠르게-느리게</div>
+        </div>
+    </body>
+</html>
