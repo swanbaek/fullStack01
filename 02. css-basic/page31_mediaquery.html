@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="style/style320.css" media="all and (min-width:320px)" />
+        <link rel="stylesheet" type="text/css" href="style/style768.css" media="all and (min-width:768px)" />
+        <link rel="stylesheet" type="text/css" href="style/style1024.css" media="all and (min-width:1024px)" />
+    </head>
+    <body>
+        <div id="wrap">
+            <h1>미디어 쿼리</h1>
+            <p>
+                @media [only|not] 미디어유형 [and 조건] * [and 조건]<br />
+                <!-- 
+            미디어 유형: 
+            all: 모든 미디어. 디폴트
+            screen: 화면이 잇는 기기. 스마트폰,pc, tablet
+            print
+            tv
+            aural:음성 합성장치
+            projection
+
+            only tv : tv에서만 동작
+            not tv: tv가 아닌 경우
+
+            ------------------------------
+            미디어쿼리의 중단점
+            @media screen and (max-width:1260px)
+            =>1260픽셀 이하일 경우에 적용
+            1260px이 중단점이 된다.
+            중단점은 보통 작은화면, 중간화면, 큰화면 정도로 구분 짓고 필요한 경우 세분화한다
+            모바일 기기가 제약조건이 많으므로 모바일을 먼저 고려하고, 태블릿, 데스크톱 등에
+            맞춰 기능,스타일을 추가한다==>모바일 퍼스트
+            but 중단점을 정할 때는 기기를 중심으로 하기 보다는 컨텐츠를 기준으로 하는 것이 좋다
+
+        -->
+            </p>
+        </div>
+        <!-- #wrap end -->
+    </body>
+</html>

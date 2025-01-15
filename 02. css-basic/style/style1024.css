@@ -1,0 +1,14 @@
+#wrap {
+    margin: 0 auto;
+    height: 500px;
+    border: thick solid #000;
+    padding: 3em;
+}
+/* tablet css */
+@media all and (min-width: 1024px) {
+    #wrap {
+        width: 90%;
+        background-color: rgb(229, 247, 225);
+        border: thick solid red;
+    }
+}

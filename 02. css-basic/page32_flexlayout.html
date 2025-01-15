@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>flexlayout</title>
+        <style>
+            * {
+                margin: 1px;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                height: 100vh;
+                background-color: antiquewhite;
+                color: navy;
+                text-align: center;
+                font-size: 1.5em;
+                display: flex;
+                flex-direction: column;
+            }
+            header {
+                background-color: #ca9;
+                padding: 2em 0;
+                height: 15vh;
+            }
+            footer {
+                background-color: #ca9;
+                padding: 1em 0px;
+                height: 10vh;
+            }
+            .container {
+                display: flex;
+                flex: 1; /* ==>flex-grow:1,flex-shrink:1 flex-basis:0%  의미*/
+            }
+            .left {
+                flex: 1 1 120px;
+                border: 1px solid #ddd;
+            }
+            .right {
+                flex: 1 1 120px;
+                border: 3px solid #ddd;
+            }
+            main {
+                background-color: #ca9;
+                padding: 3em 0;
+                height: 75vh;
+                flex: 5 5 auto;
+            }
+            /* 뷰포트 너비가 550px 까지 플렉스박스 주축 방향을 컬럼으로 설정 */
+            @media screen and (max-width: 550px) {
+                .container {
+                    flex-direction: column;
+                }
+                main {
+                    padding: 5em 0px;
+                    height: 40vh;
+                }
+            }
+            @media screen and (min-width: 1024px) {
+                #wrap {
+                    width: 90%;
+                    height: 100vh;
+                    max-width: 1024px;
+                    margin: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>Header</header>
+            <div class="container">
+                <aside class="left">Left</aside>
+                <main>Main</main>
+                <aside class="right">RIGHT</aside>
+            </div>
+            <footer>Footer</footer>
+        </div>
+    </body>
+</html>
