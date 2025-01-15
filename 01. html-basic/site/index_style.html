@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tasty Coffee</title>
+        <style>
+            /* 전체 스타일 */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+
+            /* 중앙 정렬 및 박스 스타일 */
+            .container {
+                width: 60%;
+                margin: 2em auto;
+                padding: 1.5em;
+                background-color: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                text-align: center;
+            }
+
+            /* 헤더 스타일 */
+            h1 {
+                font-size: 2.5em;
+                color: #6b4226;
+                margin-bottom: 0.5em;
+            }
+
+            /* 링크 스타일 */
+            a {
+                text-decoration: none;
+                color: #6b4226;
+                font-weight: bold;
+                margin: 0 1em;
+                transition: color 0.3s ease, background-color 0.3s ease;
+            }
+
+            a:hover {
+                background-color: #6b4226;
+                color: white;
+                padding: 0.2em 0.5em;
+                border-radius: 4px;
+            }
+
+            a:active {
+                background-color: #d7a97d;
+                color: #fff;
+            }
+
+            /* 구분선 스타일 */
+            hr {
+                border: 0;
+                height: 3px;
+                margin: 1.5em auto;
+                background: linear-gradient(to right, #6b4226, #d7a97d);
+                width: 50%;
+            }
+
+            /* 이미지 스타일 */
+            img {
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            /* 연락처 정보 스타일 */
+            p {
+                font-size: 1em;
+                line-height: 1.8;
+                color: #555;
+            }
+
+            /* 반응형 스타일 */
+            @media (max-width: 768px) {
+                .container {
+                    width: 90%;
+                }
+
+                h1 {
+                    font-size: 2em;
+                }
+
+                a {
+                    margin: 0 0.5em;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Tasty Coffee</h1>
+            <br />
+            <a href="story.html">Tasty Story</a> | <a href="menu.html">메뉴 소개</a> |
+            <a href="news.html">매장 소식</a> | <a href="map.html">카페 오는 길</a> |
+            <a href="center.html">고객 센터</a>
+            <br />
+            <hr />
+            <br />
+            <img src="images/coffee3.jpg" width="350" alt="풍미좋은 커피" />
+            <br />
+            <hr />
+            <p>
+                회사이름: 주식회사 Tasty <br />
+                주 소: 서울 강남구 강남대로<br />
+                연락처: 02) 2222-3333<br />
+                이메일: tasty@a.b.c
+            </p>
+        </div>
+    </body>
+</html>
