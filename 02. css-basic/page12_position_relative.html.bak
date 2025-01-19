@@ -23,7 +23,7 @@
             .bottom {
                 background-color: aqua;
                 position: relative;
-                bottom: 50px;/*아래에서 위로 50px 이동*/
+                bottom: -50px;/*아래에서 위로 50px 이동*/
             }
             .left {
                 background-color: yellow;
