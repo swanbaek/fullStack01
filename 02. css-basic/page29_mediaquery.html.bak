@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #main {
+                width: 200px;
+                height: 200px;
+                background-color: tomato;
+            }
+            /* 뷰포트 너비가 420px 이상일 때 turquoise 배경으로 설정 */
+            /* @media only screen and (min-width: 420px) {
+                #main {
+                    background-color: turquoise;
+                }
+            } */
+
+            @media only screen and (min-width: 421px) and (max-width: 1024px) {
+                #main {
+                    background-color: yellow;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main"></div>
+    </body>
+</html>

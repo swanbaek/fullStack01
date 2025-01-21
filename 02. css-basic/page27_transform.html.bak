@@ -63,7 +63,9 @@
         <div class="box2">scale</div>
         <div class="box3">rotate(-30deg)</div>
         <div class="box4">skew</div>
-		<!-- 
+    </body>
+</html>
+<!-- 
 /*  ######################################################################
     * transform 테크닉
     rotate(회전 효과) : rotateX(), rotateY(), rotate(x, y)
@@ -72,6 +74,3 @@
     skew(비틀기) 효과 : skewX(), skewY()
     ######################################################################*/
 -->
-    </body>
-</html>
-
