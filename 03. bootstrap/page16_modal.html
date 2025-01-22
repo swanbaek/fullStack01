@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modal</title>
+        <!-- CDN -------------------------------- -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+        <!-- ------------------------------------------ -->
+    </head>
+    <body>
+        <div class="container py-5">
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Login
+            </button>
+
+            <!-- The Modal 다이얼로그 시작-------------------------- -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Login Page</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form name="loginFrm" action="login.jsp" method="post">
+                                <div class="mb-3 mt-3">
+                                    <label for="userId" class="form-label">아이디</label>
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        name="userId"
+                                        id="userId"
+                                        placeholder="User ID"
+                                    />
+                                </div>
+
+                                <div class="mb-3 mt-3">
+                                    <label for="userPwd" class="form-label">비밀번호</label>
+                                    <input
+                                        class="form-control"
+                                        type="password"
+                                        name="userPwd"
+                                        id="userPwd"
+                                        placeholder="Password"
+                                    />
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <label class="form-check-label"
+                                        ><input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            name="saveId"
+                                            id="saveId"
+                                        />아이디 저장</label
+                                    >
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-success btn-block">Login</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- page16_modal.html -->

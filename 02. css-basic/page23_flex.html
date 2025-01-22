@@ -18,14 +18,22 @@
             }
             .flex-item:nth-child(1) {
                 flex-basis: 100px;
+                /* order: 2; */
             }
             .flex-item:nth-child(2) {
                 flex-grow: 1;
+                /* order: 1; */
             }
-            /*flex-basis :플렉스 아이템의 주축 방향의 기본 크기를 설정합니다. 기본값은 auto. (내용 크기에 따라 크기가 결정됨). 
-            명시적 값을 설정하면 그 값이 우선순위를 갖는다. */
+            /*
+            order: flex items의 순서를 지정. 기본값:0 (순서가 없음을 의미). 순서가 클수록 순서가 뒤로 밀린다
+            flex-grow: flex-items 증가 너비 비율을 지정. 기본값:0             
+            flex-shrink: flex-items 감소 너비 비율을 지정. 기본값: 1
+            flex-basis :플렉스 아이템의 주축 방향의 기본 크기를 설정합니다. 기본값은 auto. (내용 크기에 따라 크기가 결정됨). 
+            명시적 값을 설정하면 그 값이 우선순위를 갖는다. 
+            */
             .flex-item:nth-child(3) {
                 flex-grow: 0;
+                /* order: -1; */
             }
 
             /* body {

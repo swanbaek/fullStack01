@@ -24,9 +24,37 @@
                 border-radius: 50%;
                 color: #3e3e3e;
             }
+            input {
+                border: 1px solid #ccc; /* 기본 테두리 색상 */
+                padding: 0.5rem;
+                background-color: #fff; /* 기본 배경색 */
+                transition: border-color 0.3s ease, background-color 0.3s ease; /* 배경색 및 테두리 전환 효과 */
+            }
+            input:focus {
+                border-color: #2ecc71; /* 포커스 시 테두리 색상 변경 */
+                background-color: #e8f5e9; /* 포커스 시 배경색 변경 */
+                outline: none; /* 기본 포커스 아웃라인 제거 */
+            }
+            button {
+                transition: transform 0.2s ease, border 0.3s ease;
+                padding: 5px;
+                border: none;
+                margin: 1em;
+            }
+            button:active {
+                /*사용자가 요소를 클릭한 상태(누른 상태)일 때 발생*/
+                transform: scale(1.5);
+                border: 2px solid #9b59b6;
+            }
+
+           
         </style>
     </head>
     <body>
         <div class="box-transition">Transition</div>
+        <hr />
+        <input type="text" name="name" id="name" />
+        <hr />
+        <button>Click Me</button> 
     </body>
 </html>

@@ -14,6 +14,7 @@
                 height: 100px;
                 background-color: rgb(9, 46, 58);
                 margin: 1em;
+                text-align: center;
             }
             .box {
                 transition: transform 0.5s ease; /* 변형 시 애니메이션 효과 */
@@ -47,13 +48,30 @@
                 background-color: lightgreen;
                 transform: skew(30deg, 30deg); /*x:30도, y30도 정해진 각도만큼 비틀어 왜곡*/
             }
+
+            .item-box {
+                perspective: 500px;
+            }
+            .item-box:hover .item {
+                transform: rotateY(80deg);
+            }
         </style>
     </head>
     <body>
-        <div class="box"></div>
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-        <div class="box4"></div>
+        <div class="box">rotate</div>
+        <div class="box1">translate</div>
+        <div class="box2">scale</div>
+        <div class="box3">rotate(-30deg)</div>
+        <div class="box4">skew</div>
+		<!-- 
+/*  ######################################################################
+    * transform 테크닉
+    rotate(회전 효과) : rotateX(), rotateY(), rotate(x, y)
+    scale(확대/축소 효과) : scaleX(), scaleY(), scale(x, y)
+    translate(이동효과) : translateX(), translateY(), translate(x, y)
+    skew(비틀기) 효과 : skewX(), skewY()
+    ######################################################################*/
+-->
     </body>
 </html>
+

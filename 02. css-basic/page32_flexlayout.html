@@ -47,7 +47,7 @@
                 height: 75vh;
                 flex: 5 5 auto;
             }
-            /* 뷰포트 너비가 550px 까지 플렉스박스 주축 방향을 컬럼으로 설정 */
+            /* 뷰포트너비 550px 까지  주축 방향을 컬럼으로 지정 */
             @media screen and (max-width: 550px) {
                 .container {
                     flex-direction: column;
@@ -65,6 +65,16 @@
                     margin: auto;
                 }
             }
+			/*
+			vw: 뷰포트 너비의 1%.
+				예: 50vw는 뷰포트 너비의 50%.
+			vh: 뷰포트 높이의 1%.
+				예: 100vh는 화면의 전체 높이.
+			vmin: 뷰포트 너비와 높이 중 작은 쪽의 1%.
+				예: 10vmin은 뷰포트의 좁은 쪽 크기의 10%.
+			vmax: 뷰포트 너비와 높이 중 큰 쪽의 1%.
+				예: 20vmax는 뷰포트의 넓은 쪽 크기의 20%
+			*/
         </style>
     </head>
     <body>

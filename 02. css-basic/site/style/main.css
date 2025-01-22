@@ -1,0 +1,225 @@
+/* 전체 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* 중앙 정렬 및 박스 스타일 */
+.container {
+    width: 60%;
+    margin: 2em auto;
+    padding: 1.5em;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* 헤더 스타일 */
+h1 {
+    font-size: 2.5em;
+    color: #6b4226;
+    margin-bottom: 0.5em;
+}
+h2 {
+    font-size: 1.8em;
+    color: #d77a5f;
+    margin-bottom: 0.5em;
+}
+
+/* 링크 스타일 */
+a {
+    text-decoration: none;
+    color: #6b4226;
+    font-weight: bold;
+    margin: 0 1em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #6b4226;
+    color: white;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+}
+
+a:active {
+    background-color: #d7a97d;
+    color: #fff;
+}
+
+/* 구분선 스타일 */
+hr {
+    border: 0;
+    height: 3px;
+    margin: 1.5em auto;
+    background: linear-gradient(to right, #6b4226, #d7a97d);
+    width: 50%;
+}
+
+/* 이미지 스타일 */
+img {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 연락처 정보 스타일 */
+p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* 리스트 스타일 */
+ul,
+ol {
+    width: 80%;
+    margin: 1.5em auto;
+    padding: 0;
+    text-align: left;
+    list-style-position: inside;
+    font-size: 1.2em;
+}
+
+ul li {
+    margin: 0.5em 0;
+    padding-left: 1em;
+    background: url('https://via.placeholder.com/10/6b4226') no-repeat left center;
+    background-size: 10px 10px;
+}
+
+ol li {
+    margin: 0.5em 0;
+    padding-left: 0.5em;
+}
+
+/* 연락처 정보 스타일 */
+p.addr {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+}
+table {
+    width: 80%;
+    margin: 1.5em auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 1em;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #6b4226;
+    color: white;
+    font-size: 1.1em;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f7e7d9;
+}
+
+td {
+    font-size: 1em;
+    color: #555;
+}
+/*---------------*/
+fieldset {
+    border: 2px solid #6b4226;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 1.5em 0;
+    text-align: left;
+    background-color: #fefcfb;
+}
+
+legend {
+    font-size: 1.5em;
+    color: #6b4226;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type='text'],
+textarea {
+    width: 95%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+input[type='text']:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6b4226;
+    box-shadow: 0 0 5px rgba(107, 66, 38, 0.5);
+}
+
+button {
+    background-color: #6b4226;
+    color: white;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d7a97d;
+}
+
+/* 반응형 스타일============================= */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .main {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+
+    ul,
+    ol {
+        width: 100%;
+    }
+    a {
+        margin: 0 0.5em;
+    }
+
+    img {
+        width: 100%;
+    }
+    input[type='text'],
+    textarea,
+    table {
+        width: 100%;
+    }
+}
