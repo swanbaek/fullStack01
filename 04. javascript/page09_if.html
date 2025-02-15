@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page09_if.html</title>
+    </head>
+    <body>
+        <h1>제어문 - if문</h1>
+        <!-- if,  if ~ else, if ~else if ... else 
+        if(조건식){
+            실행문
+        } 
+            조건식이 true이면 실행문을 실행
+        -->
+        <script>
+            let num = parseInt(prompt('정수를 입력하세요', 0));
+            // if (num == null) {
+            //     //alert('숫자를 입력해야해요');
+            //     //window.location.reload(); //새로고침
+            // }
+            // alert(num);
+            console.log(typeof num);
+
+            if (num > 0) {
+                document.write(num + '은 양수입니다<br>');
+                document.write('###########');
+            } else {
+                document.write(num + '은 음수이거나 0입니다<br>');
+            }
+            document.write('****************');
+            
+        </script>
+    </body>
+</html>
+<!-- page09_if.html -->

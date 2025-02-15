@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page12_switch.html</title>
+    </head>
+    <body>
+        <h1>제어문 - switch ~ case문</h1>
+        <!-- 
+            switch(변수|수식){
+                case 값1: 실행문; break;
+                case 값2: 실행문; break;
+                ...
+                default: 실행문; 
+            }
+        -->
+        <script>
+            //4계절을 입력받아 해당 계절의 영어 문자열을 출력
+            let season = prompt('현재 계절을 입력하세요', '봄');
+            let str = null;
+            switch (season) {
+                default:
+                    str = '그런 계절은 없습니다';
+                    break;
+                case '봄':
+                    str = 'Spring';
+                    break;
+                case '여름':
+                    str = 'Summer';
+                    break;
+                case '가을':
+                    str = 'Fall';
+                    break;
+                case '겨울':
+                    str = 'Winter';
+                    break;
+            }
+            document.write(`<h2>${str}</h2>`);
+        </script>
+    </body>
+</html>
+<!-- page12_switch.html -->

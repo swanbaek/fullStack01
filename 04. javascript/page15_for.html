@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>중첩 for루프</h1>
+        <!--  3행 5열 형태로 출력
+        ★★★★★ <br>
+        ★★★★★ <br>
+        ★★★★★ <br> 
+        -->
+        <script>
+            for (let k = 0; k < 3; k++) {
+                for (let i = 0; i < 5; i++) {
+                    document.write('★');
+                } //for----
+                document.write('<br>');
+            } //for---------------
+            document.write('<hr>');
+            // 3행 5열 형태의 table 을 만들어 출력하세요 셀안에 ★ 출력하세요
+            let str = `<table border="1">`;
+            for (let k = 0; k < 3; k++) {
+                //행의 조건
+                str += `<tr>`;
+                for (let i = 0; i < 5; i++) {
+                    //열의 조건
+                    str += `<td>★</td>`;
+                } //for----
+                str += `</tr>`;
+            } //for---------------
+            str += `</table>`;
+
+            console.log(str);
+            document.write(str);
+        </script>
+    </body>
+</html>

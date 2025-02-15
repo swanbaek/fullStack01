@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>for loop</h1>
+        <!-- [1]
+        table태그 이용해서 구구단 전체 테이블을 구성하세요
+        2단         3단                     9단
+        2x1=2       3x1=3                   9x1=9
+        2x2=4       3x2=6                   9x2=18
+
+        [2] prompt()로 행의 수, 열의 수, border두께, 배경색을 입력받아
+            해당하는 행 열 형태의 테이블을 출력하세요
+            셀안에는 "딸기"를 넣어주세요
+        -->
+        <script>
+            let mpt = '<table border="1"  style="border-collapse: collapse;width:80%;margin:auto">';
+            for (i = 0; i < 10; i++) {
+                mpt += '<tr>';
+                for (j = 1; j < 10; j++) {
+                    if (i == 0) {
+                        mpt += `<th style="border: 1px solid black;background-color:skyblue"> ${j}단  </th>`;
+                    } else {
+                        mpt += `<td style="border: 1px solid black"> ${j}×${i}=${i * j} </td>`;
+                    }
+                }
+                mpt += '</tr>';
+            }
+            mpt += '</table>';
+            document.write(mpt);
+        </script>
+        <hr />
+        <script>
+            let rows = prompt('행을 입력하시오.');
+            let cols = prompt('열을 입력하시오.');
+            let border = prompt('두께를 입력하시오.');
+            let bcolor = prompt('배경색을 입력하시오.\n1 : 적색\n2 : 청색\n3 : 황색\n4 : 녹색');
+
+            switch (parseInt(bcolor, 10)) {
+                case 1:
+                    bcolor = 'red';
+                    break;
+                case 2:
+                    bcolor = 'b3';
+                    break;
+                case 3:
+                    bcolor = 'yellow';
+                    break;
+                case 4:
+                    bcolor = 'green';
+                    break;
+                default:
+                    bcolor = 'white';
+            }
+            let table2 = `<table style="background-color: ${bcolor}; border: ${border}px solid black">`;
+            for (i = 0; i < rows; i++) {
+                table2 += '<tr>';
+
+                for (j = 0; j < cols; j++) {
+                    table2 += '<td>딸기</td>';
+                }
+                table2 += '</tr>';
+            }
+            table2 += '</table>';
+            document.write(table2);
+        </script>
+    </body>
+</html>

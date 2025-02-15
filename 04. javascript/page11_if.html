@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page11_if.html</title>
+    </head>
+    <body>
+        <!-- 
+        적정 체중 구하기
+        키와 몸무게를 입력받아 적정 체중을 구하세요
+        [참고] 적정 체중 = (키-100)*0.9;
+        사용자가 입력한 몸무게가 적정 체중보다 크면
+                "과체중", 적정 체중 미만이면 "체중 미달"
+                그외에는 "적당해요"를 출력하세요.
+                단 id가 result인 곳에 출력하되,
+                과체중이면 빨강색, 적정 체중이면 파랑색,
+                체중 미달이면 초록색으로 출력하세요
+         -->
+        <h1>적정 체중 구하기</h1>
+        <script>
+            let tall = parseFloat(prompt('키를 입력하세요', 0));
+            let kg = parseFloat(prompt('몸무게를 입력하세요', 0));
+            let noraml = (tall - 100) * 0.9;
+            document.write(`<h2>적정 체중${noraml}</h2>`);
+            let cr = 'black';
+            let msg = '';
+            if (kg > noraml) {
+                // document.write(`<h2 style="color:red"> 키${tall}cm 몸무게${kg}은 과체중 입니다 </h2>`);
+                cr = 'red';
+                msg = '과체중';
+            } else if (kg < noraml) {
+                // document.write(`<h2 style="color:green"> 키${tall}cm 몸무게${kg}은 체중 미달 입니다 </h2>`);
+                cr = 'green';
+                msg = '체중 미달';
+            } else {
+                // document.write(`<h2 style="color:blue"> 키${tall}cm 몸무게${kg}은 적정 체중입니다 </h2>`);
+                cr = 'blue';
+                msg = '적정 체중';
+            }
+            let str = `<h2 style="color:${cr}">키: ${tall} 몸무게: ${kg} ${msg}</h2>`;
+            document.write(str);
+        </script>
+    </body>
+</html>
+<!-- page11_if.html -->

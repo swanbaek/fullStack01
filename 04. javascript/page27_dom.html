@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page27_dom.html</title>
+    </head>
+    <body>
+        <button id="b1">#list에 React추가하기</button>
+        <button id="b2">#list 중간에 jQuery추가하기</button>
+        <button id="b3">#list2에 img 속성값 변경하기</button>
+        <button id="b4">#list2에 img 속성값 지우기</button>
+        <hr />
+        <ul id="list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <hr color="red" />
+
+        <div id="list2">
+            <img />
+        </div>
+
+        <script>
+            //document.getElementById('아이디명')
+            //document.getElementsByClassName('클래스명') //반환타입 HTMLCollection
+            let buttons = document.getElementsByTagName('button'); //반환타입 HTMLCollection
+            //alert(buttons);
+            buttons[0].addEventListener('click', () => {
+                const newLi = document.createElement('li'); //부모-엘리먼트 노드
+                const txtNode = document.createTextNode('React.js'); //자식-텍스트노드
+                newLi.appendChild(txtNode);
+                newLi.style.color = 'maroon';
+                newLi.style.fontSize = '1.2em';
+                //<li>React.js</li>
+                // document.querySelector('#list').append(newLi);//ul태그 마지막에 덧붙임
+                document.querySelector('#list').prepend(newLi); //ul태그 앞에 덧붙임
+            });
+            //요소.onclick = function(){}
+            buttons[1].onclick = function () {
+                const newLi = document.createElement('li');
+                newLi.textContent = 'jQuery';
+                newLi.style.color = 'blue';
+                // newLi.style.fontWeight = 'bold';
+                newLi.style['font-weight'] = 'bold';
+
+                const ulEle = document.querySelector('#list');
+                const lastEle = ulEle.lastElementChild; //마지막 자식
+                ulEle.insertBefore(newLi, lastEle); //lastEle 앞에 newEle를 삽입
+            };
+
+            buttons[2].onclick = () => {
+                let img = document.querySelector('#list2>img');
+                //alert(img);
+                img.setAttribute('src', 'https://picsum.photos/200/200');
+                img.setAttribute('alt', '랜덤 이미지');
+            };
+            buttons[3].onclick = () => {
+                let img = document.querySelector('#list2>img');
+                //alert(img.getAttribute('src'));
+                //removeAttribute('속성명')
+                img.removeAttribute('src');
+                img.remove('alt');
+            };
+        </script>
+    </body>
+</html>

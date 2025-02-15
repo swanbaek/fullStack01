@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page14_for</title>
+        <style>
+            .red {
+                color: red;
+            }
+            .blue {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>제어문 - for loop</h1>
+        <!-- 
+            for(변수선언 초기화식; 조건식; 증감식){
+                반복 실행할 문장
+            }
+         -->
+        <script>
+            for (let a = 1; a < 5; a += 2) {
+                document.write(`<h2> Hello World ${a} </h2>`);
+            }
+        </script>
+        <hr />
+        <script>
+            //for루프 이용해서 1~100사이값을 출력하세요
+            //짝수이면 글자색을 red로 홀수면 글자색을 blue로 출력되도록 해보세요.
+            let cls = '';
+
+            for (let i = 1; i <= 100; i++) {
+                // if (i % 2 == 0) {
+                //     //짝수
+                //     cls = 'red';
+                // } else {
+                //     //홀수
+                //     cls = 'blue';
+                // }
+                cls = i % 2 == 0 ? 'red' : 'blue';
+
+                document.write(`<span class="${cls}">${i}</span>&nbsp;&nbsp;`);
+                console.log(`<span  class="${cls}">${i}</span>&nbsp;&nbsp;`);
+            }
+        </script>
+        <hr />
+        <script>
+            let b = 10;
+            for (; b > 0; b -= 3) {
+                document.write('Bye Bye ' + b, '<br>');
+            }
+            // 무한루프
+            //for(;;){}
+            // for (;;) {
+            //     console.log('무한루프....');
+            // }
+        </script>
+    </body>
+</html>

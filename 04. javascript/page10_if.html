@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>다중 if문</h1>
+        <!-- 
+            if(조건1){
+            
+            }else if(조건2){
+            
+            }else if(조건3){
+            
+            }else{
+            
+            }
+        -->
+        <script>
+            let score = prompt('평균 점수를 입력하세요');
+            // 점수가 90점 이상이면 A학점, 80=> B, 70 =>C  60이하 => F
+            if (score >= 90) {
+                document.write(`<h2 style="color:green">A학점</h2>`);
+            } else if (score >= 80) {
+                document.write(`<h2>B학점</h2>`);
+            } else if (score >= 70) {
+                document.write(`<h2>C학점</h2>`);
+            } else {
+                document.write(`<h2 style="color:red">F학점</h2>`);
+            }
+        </script>
+    </body>
+</html>

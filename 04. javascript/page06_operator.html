@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page06_operator</title>
+    </head>
+    <body>
+        <h1>자바스크립트의 연산자</h1>
+        <script>
+            //1. 산술연산자(+, -, *,/, %)
+            let x = 50,
+                y = 10;
+            document.write(x + y, '<br>');
+            document.write(x - y, '<br>');
+            document.write(x * y, '<br>');
+            document.write(x / 3, '<br>'); //나눈 몫을 구함
+            document.write(x % 3, '<br>'); //나머지값을 구함
+        </script>
+        <hr />
+        <script>
+            //2. 증감 연산자(++, --)
+            let a = 10;
+            a++; // a=a+1;  //1씩 증가
+            document.write(`a=${a}`, '<br>');
+            ++a;
+            document.write(`a=${a}`, '<br>');
+            let b = 7;
+            b--; // b =b-1
+            document.write(`b=${b}`, '<br>'); //6
+            --b;
+            document.write(`b=${b}`, '<br>'); //5
+
+            let m = 5;
+            let n = ++m; //m++;
+            //n, m의 값 출력
+            document.write(`m=${m}, n=${n}`, '<br>');
+            // 전위 연산자: 1을 증가시킨 뒤 해당 변수를 다른 연산에 사용함
+            // 후위 연산자: 변수가 가진값을 다른 연산에 먼저 사용한 뒤 1을 증가시킴
+            let z = 9;
+            document.write(z--, '<br>'); //9
+            document.write(z, '<br>'); //8
+        </script>
+        <hr />
+    </body>
+</html>
+<!-- page06_operator.html -->

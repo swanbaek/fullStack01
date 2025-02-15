@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>배열 응용</title>
+        <style>
+            div#demo {
+                margin: 20px;
+                /* border: 1px solid red; */
+            }
+            #demo img {
+                height: 200px;
+                margin: 5px;
+            }
+        </style>
+        <script>
+            const arr = ['a.png', 'b.png', 'c.png', 'd.png', 'e.png'];
+            //
+            window.onload = function () {
+                //윈도우의 모든 리소스가 로드되면 익명함수를 실행하라
+                let obj = document.getElementById('demo');
+                //id가 bt1인 요소를 btn1에 할당하세요
+                let bt1 = document.querySelector('#bt1');
+                let bt2 = document.querySelector('#bt2');
+                let btMove = document.querySelector('#btMove');
+                let btStop = document.querySelector('#btStop');
+
+                //[1] Click Me를 클릭하면 arr에 저장된 문자열을 id가 demo인 곳에 출력하세요
+                //요소.addEventListener('이벤트종류', 핸들러함수)
+                bt1.addEventListener('click', function () {
+                    //alert('hi');
+                    //obj.innerText = '<h1>Hi</h1>';
+                    //obj.innerHTML = '<h1>Hi</h1>';
+                    let str = ``;
+                    for (const movie of arr) {
+                        str += `<h3>${movie}</h3>`;
+                    }
+                    obj.innerHTML = str;
+                });
+
+                //[2] 현재 상영작 보기 클릭하면 id가 demo 인 곳에 img로 배열에 저장된 이미지들이 출력되게 하세요
+                bt2.addEventListener('click', () => {
+                    let str = ``;
+                    for (let i = 0; i < arr.length; i++) {
+                        str += `<img src="myweb/images/${arr[i]}">`;
+                    }
+                    obj.innerHTML = str;
+                });
+
+                //[3] Move 버튼 클릭하면 영화 이미지들이 움직이게 처리하자
+                //pid=window.setInterval(함수, 밀리초) <===> window.clearInterval(pid) //밀리초 마다 핸들러 함수를 주기적으로 실행
+                //pid=window.setTimeout(함수, 밀리초)  <===> window.clearTimeout(pid) //밀리초 뒤에 핸들러 함수를 딱 한번 실행함
+                let win = null;
+                let x = 20;
+                let sw = 1;
+                btMove.addEventListener('click', () => {
+                    if (win == null) {
+                        win = setInterval(function () {
+                            //alert('Hi~~');
+                            //#demo의 이미지들이 움직이도록 처리하세요
+                            //style 개체 이용해서 왼쪽 마진값을 증가시키세요
+                            if (x > 300) {
+                                sw = -1;
+                            }
+                            if (x < 20) {
+                                sw = 1;
+                            }
+
+                            x += 3 * sw;
+                            obj.style.marginLeft = `${x}px`;
+                        }, 30);
+                    } //if----------
+                });
+
+                btStop.addEventListener('click', () => {
+                    if (win != null) {
+                        clearInterval(win);
+                        win = null;
+                    }
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <button id="bt1">Click Me</button>
+        <button id="bt2">현재 상영작 보기</button>
+        <button id="btMove">Move</button>
+        <button id="btStop">Stop</button>
+        <hr />
+        <div id="demo"></div>
+    </body>
+</html>
