@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page08_event</title>
+        <style>
+            #panel {
+                width: 90%;
+                margin: auto;
+                border: 1px solid red;
+                height: 600px;
+            }
+            #panel2 {
+                width: 90%;
+                margin: auto;
+                border: 1px solid green;
+                height: 600px;
+                background-color: aquamarine;
+            }
+        </style>
+        <!-- jquery cdn ------------------------------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------------------------------ -->
+    </head>
+    <body>
+        <h1>jQuery 이벤트</h1>
+        <div id="panel">
+            <h2><a href="#panel2" id="a1">페이지 내에서 이동</a></h2>
+            <h2><a href="http://www.google.com" id="a2">구글로 이동1</a></h2>
+            <h2><a href="http://www.google.com" id="a3">구글로 이동2</a></h2>
+            <h1>Click Me</h1>
+        </div>
+
+        <div id="panel2">#panel2 페이지 입니다</div>
+        <script>
+            //속성값을 가져올때: attr(), prop()
+            let txt = $('#a1').attr('href');
+            //alert(txt);
+            $('#panel2').append(`<h1>${txt}</h1>`).css('color', 'blue').prepend(`[<a href='#'>Top으로</a>]`);
+
+            //[1] #a2 클릭하면 텍스트의 배경색을 navy로 글자색은 yellow로 주세요
+            $('#a2').click(function () {
+                $(this).css('background', 'navy').css('color', 'yellow');
+                //onclick -->href로 이동하는 것을 막는 방법
+                //[1] return false
+                //[2] event객체의 preventDefault() 함수를 호출
+                //==> 연쇄적인 trigger행동이 중지된다
+                return false;
+            });
+            $('#a3').click(function (evt) {
+                $(this).css('background', 'red').css('color', '#fff');
+                evt.preventDefault(); //이벤트의 기본동작을 막는 함수
+            });
+            //[2] h1을 클릭하면 클릭한 h1의 배경색을 변경하세요
+            $('h1').click((evt) => {
+                console.dir($(this)); //window객체 (화살표함수에서 this는 상위객체-window를 가리킴)
+                console.log('evt.target: ', evt.target);
+                $(evt.target).css('background', '#ace');
+                console.log('***h1 클릭함************');
+                //h1을 클릭하면 h1의 부모(#panel)까지 클릭 이벤트가 전파된다
+                //===> 버블링(자식--->부모)  /캡처링(부모--->자식)
+                //버블링(캡처링)을 막는 방법 => event객체의 stopPropagation()
+                evt.stopPropagation();
+            });
+            //[3] #panel 을 클릭하면 #panel의 배경색을 yellow로 변경하세요
+            $('#panel').click(function () {
+                //function(){}에서 this를 사용하면 #panel이 된다
+                $(this).css('background', 'yellow');
+                console.log('####panel클릭함#########');
+            });
+        </script>
+    </body>
+</html>

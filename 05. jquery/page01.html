@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- jquery lib ------------------------- -->
+        <script src="jquery-3.7.1.min.js"></script>
+        <!-- ----------------------------------- -->
+        <script>
+            //[1] 자바스크립트 방식
+            window.onload = () => {
+                const obj = document.getElementById('a');
+                obj.innerHTML = `<h3>Hello JavaScript</h3>`;
+                obj.style.color = 'hotpink';
+            };
+            //[2] jquery 방법1
+            //jQuery()함수를 사용 ==>축약해서 $() === jQuery() 동일
+            //document가 준비되면 익명함수를 실행
+            $(document).ready(function () {
+                //alert('b');
+                $('#b').html('<h3>Hello jQuery</h3>').css('color', 'red').css('border', '2px dashed blue');
+            });
+
+            //[3]jquery 방법2
+            $(function () {
+                //id가 c인 객체를 찾아서 "Good Bye jQuery~"
+                //문자열을 넣으세요. 배경색 주고, 패딩, 테두리도 적용하기
+                $('#c').html('<h1>Good Bye jQuery~~').css({
+                    color: 'aqua',
+                    backgroundColor: 'yellow',
+                    padding: '0.8em',
+                    marginTop: '1em',
+                    border: 'thick dotted tomato',
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>jQuery 시작하기</h1>
+        <h2>jquery 라이브러리 설치</h2>
+        <!-- http://jquery.com -->
+        <h2>CDN으로 참조하는 방법</h2>
+
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page05_selector.html</title>
+        <!-- jquery cdn ------------------------------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------------------------------ -->
+        <script>
+            $(function () {
+                /*내용 필터
+                [1] 요소:contains('값'): 내용 중에 '값'을 포함하고 있는 요소 선택
+                [2] 요소:has('요소'): 내용중에 '요소(태그)'를 가지고 있는 요소 선택
+                [3] 요소:empty : 내용이 비어있는 요소를 선택
+
+                보임 필터
+                [4] 요소:hidden: 화면에 보이지 않는 요소를 선택
+                [5] 요소:visible: 화면에 보이는 요소를 선택
+                    - 보이지 않는 경우 (:hidden)
+                    1) display:none
+                    2) input type이 hidden인 경우
+                    3) width나 height가 0인 경우
+                    4) 부모 요소가 보이지 않거나 숨겨져 있을 경우
+                    cf>참고로 visibility:hidden이거나 opacity:0
+                        인 요소는 선택되지 않는다.
+
+                */
+                /* [문제1] li요소 중에 'ap'라는 값을 포함하고 있는 요소를
+                        선택해서 글자색을 red로 주세요*/
+
+                $('li:contains("ap")').css('color', 'red');
+
+                /*[문제2] li태그를 자식 요소로 가지고 있는 ul요소를 찾아서
+                        테두리를 3px inset green으로 주세요
+                    */
+                $('ul:has("li")').css('border', '3px inset green');
+
+                /*[문제3] li요소 중 비어있는 요소를 찾아서 "비어있어요"라는
+                    텍스트를 주세요*/
+                //$('li:empty').text('<h3>비어있어요</h3>');
+                //$('li:empty').html('<h3>비어있어요</h3>'); //setter
+                //alert($('li:first').html());//getter
+                /*선택자.html(str): html태그를 포함한 문자열을 넣어준다.
+                setter역할
+                선택자.html(); 선택한 요소안의 html태그를 반환한다. getter역할  */
+
+                /*
+                text(str): 문자열을 선택자 안에 넣어줌.
+                text(): 선택자 안의 텍스트를 반환함
+                */
+                /*[문제4] 비어있는 li요소에 마우스를 갖다대면
+                    이미지[kitty-2.png]를 넣어주고, 마우스가 영역을 벗어나면 비워주세요.
+                    mouseover/mouseout ==> 자식 엘리먼트까지 적용됨 ==> 깜박임
+                    대신
+                    mouseenter/mouseleave ==> 자식 엘리먼트에는 적용되지 않음.
+
+                    아니면 hover(함수1, 함수2) 함수
+                    함수1에는 마우스오버시 동작할 코드
+                    함수2에는 아우스아웃시 동작할 코드
+                    [1] 선택요소.on('이벤트종류', 핸들러함수)
+                    [2] 선택요소.이벤트함수(핸들러함수)
+                    */
+                $('li:empty').on('click', function () {
+                    alert('hi');
+                });
+                // $('li:empty')
+                //     .on('mouseenter', function () {
+                //         $(this).css('background-color', 'yellow');
+                //         $(this).html('<img src="images/kitty-2.png">');
+                //     })
+                //     .on('mouseleave', function () {
+                //         $(this).css('background-color', '').html('');
+                //     });
+
+                // $('li:first').click(function () {
+                //     alert('hello');
+                // });
+                //요소.hover(함수1, 함수2)
+                //마우스오버시=>함수1을 수행, 마우스아웃시=>함수2를 실행
+                $('li:empty').hover(
+                    function () {
+                        $(this).html('<img src="images/cup.png">');
+                    },
+                    function () {
+                        $(this).html('');
+                    }
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <h1>jQuery 내용필터, 보임필터 선택자</h1>
+        <div id="panel">
+            <ul class="navi1">
+                <li>apple</li>
+                <li style="display: none">banana</li>
+                <li>grape</li>
+                <li></li>
+            </ul>
+            <ul class="navi2">
+                <li>tiger</li>
+                <li>lion</li>
+                <li>fox</li>
+                <li></li>
+            </ul>
+        </div>
+    </body>
+</html>
+<!-- page05_selector.html -->

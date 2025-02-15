@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page07_selector</title>
+        <!-- jquery cdn ------------------------------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------------------------------ -->
+        <script>
+            $(() => {
+                /* #폼 필터 선택자
+                [1] 선택자:input  : 모든 input요소를 선택한다.
+                                <input><select><button><textarea>...등
+                [2] 선택자:radio  : radio요소를 선택
+                [3] 선택자:checkbox: checkbox요소를 선택
+                [4] 선택자:text
+                [5] 선택자:file
+                [6] 선택자:password
+                [7] 선택자:button : 모든 버튼 유형(submit,reset,button)
+                [8] 선택자:submit
+                [9] 선택자:reset
+                [10]선택자:image : (input type속성값이 image인 요소 선택)
+                
+                #상태 필터 선택자
+                [1] 선택자:selected : (select태그)에서 선택된 요소를 찾아준다.
+                [2] 선택자:checked (radio,checkbox)에서 체크된 요소를 찾아준다.
+                [3] 선택자:focus : 현재 포커스가 온 요소를 선택
+                [4] 선택자:enabled : 활성화되어 있는 요소를 선택
+                [4] 선택자:disabled : 비활성화되어 있는 요소를 선택
+                */
+                //val() : 입력값을 가져오거나 설정할 때
+                //[문제1] select에 이벤트를 적용하세요 change이벤트
+                //       선택한 값을 변경할 때 선택한 값을 얻어와서 id가 msg인 곳에
+                //      텍스트 형태로 출력하세요
+                //[문제2] select에서 선택한 색상으로 body의 배경색을 변경하세요
+                $('select').on('change', function () {
+                    //select>option:selected
+                    let txt = $('select>option:selected').val();
+                    $('#msg').html(txt);
+                    $('body').css('background', txt);
+                });
+                //click이벤트 활용
+                //[문제3] radio버튼에서 선택한 성별값을 id가 result인 곳에 출력
+                let str = $('input[type="radio"]:checked').val();
+                $('#result').html(`<h1>${str}</h1>`).css('color', 'red');
+
+                $(':radio').on('click', function () {
+                    let txt = $(':radio:checked').val();
+                    $('#result').html(`<h1>${txt}</h1>`).css('color', 'red');
+                });
+                //[문제4] checkbox버튼에서 선택한 언어값을 id가 result인 곳에 출력
+                let chkTxt = '';
+                $(':checkbox').on('click', function () {
+                    let b = $(this).is(':checked');
+                    //alert(b);
+                    if (b) {
+                        chkTxt += $(this).val() + ', ';
+                        $('#result').html(`<h1>${chkTxt}</h1>`).css('color', 'green');
+                    }
+                });
+                //checkbox, radio 버튼을 선택해서 테두리를 3px dashed tomato로 주세요
+                $(':checkbox, :radio')
+                    .wrap('<span></span>') //checkbox,radio가 span으로 감싸짐
+                    .parent() //=>span요소
+                    .css('border', '3px dashed tomato');
+            }); //$() end----------
+        </script>
+    </head>
+    <body>
+        <h1>jQuery 폼필터,상태필터 선택자</h1>
+        <h2>form 엘리먼트의 현재 상태를 검사하여 거르는 선택자</h2>
+        <form name="f">
+            <select>
+                <option value="">::배경색::</option>
+                <option value="yellow">노랑</option>
+                <option value="lime">라임</option>
+                <option value="skyblue">하늘색</option>
+            </select>
+            <span id="msg"></span>
+            <p></p>
+            이름: <input type="text" name="name" disabled />
+            <p></p>
+            <!--disabled속성을 가지면 서버로 데이터 전송이 되지 않음-->
+            성별: <input type="radio" name="gender" value="남" />남자
+            <input type="radio" name="gender" value="여" checked />여자
+            <p></p>
+            언어:
+            <input type="checkbox" name="lang" value="Kor" />한국어
+            <input type="checkbox" name="lang" value="Eng" />영어
+            <input type="checkbox" name="lang" value="JS" />JavaScript
+            <input type="checkbox" name="lang" value="HTML" />HTML
+            <p></p>
+            <button type="button" class="btn">결과보기</button>
+            <button type="reset" class="btn">다시쓰기</button>
+            <button>전송하기</button>
+        </form>
+        <div id="result"></div>
+    </body>
+</html>

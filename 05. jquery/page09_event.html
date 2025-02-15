@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page09_event</title>
+    </head>
+    <body>
+        <h1>jQuery 이벤트</h1>
+        <button id="bt1">Click Me</button>
+        <button id="bt2">클릭 한번만(one)</button>
+        <button id="bt3">이벤트 제거(off)</button>
+        <hr />
+        <button id="bt4">버튼1 (버튼1을 누르면 버튼2를 함께 누른 효과)</button>
+        <button id="bt5">버튼2 (trigger)</button>
+        <!-- jquery cdn ------------------------------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------------------------------ -->
+        <script>
+            //[1] 일반 이벤트 등록: on('이벤트종류',핸들러함수)
+            $('#bt1').on('click', hi);
+
+            //[2] 단축 이벤트 등록: 요소.click(핸들러함수)
+            $('#bt1')
+                .focusin(function () {
+                    $(this).css('background', 'gold');
+                })
+                .focusout(function () {
+                    $(this).css('background', '');
+                });
+            //one('이벤트종류',함수)    : 한번만 동작함
+            $('#bt2').one('click', function () {
+                hi();
+            });
+            //off() : 등록된 모든 이벤트 제거
+            //off('이벤트') : 지정된 이벤트 제거
+            //off('이벤트',함수): 지정된 이벤트와 핸들러 제거
+
+            //#bt3클릭하면 #bt1의 click이벤트를 제거하세요
+            $('#bt3').click(() => {
+                $('#bt1').off('click', hi);
+            });
+
+            $('#bt5').click(() => {
+                //document.body.style.backgroundColor = 'purple';
+                $('body').css('background', 'purple');
+            });
+            $('#bt4').click(() => {
+                alert('Hello');
+                $('#bt5').trigger('click');
+                //trigger('이벤트') 함수를 사용하면 해당 이벤트를 강제로 발생시킨다
+            });
+
+            function hi() {
+                alert('hi');
+            }
+        </script>
+    </body>
+</html>

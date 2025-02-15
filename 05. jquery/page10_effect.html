@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page10_effect.html</title>
+        <!-- jquery cdn ------------------------------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------------------------------ -->
+    </head>
+    <body>
+        <h1>jQuery 효과(effect)</h1>
+        <img src="images/tree-4.jpg" width="280" height="190" />
+        <!-- 이미지의 가로,세로 크기가 지정되어 있어야 함 -->
+        <div id="result"></div>
+
+        <button id="fadeOut">fadeOut</button>
+        <button id="fadeIn">fadeIn</button>
+        <button id="fadeToggle">fadeToggle</button>
+
+        <hr color="red" />
+        <button id="slideUp">slideUp</button>
+        <button id="slideDown">slideDown</button>
+        <button id="slideToggle">slideToggle</button>
+
+        <hr color="blue" />
+        <button id="ani1">animate hide</button>
+        <button id="ani2">animate show</button>
+
+        <hr color="orange" />
+        <button id="ani3">animate left</button>
+        <button id="ani4">animate right</button>
+        <button id="ani5">animate toggle</button>
+        <script>
+            const result = function () {
+                let str = $('img').css('display');
+                $('#result').html(`<h2>${str}</h2>`);
+            };
+
+            //show()/hide() : display속성을 이용해 보여주고 감춘다
+            //fadeOut()/fadeIn()/fadeToggle() : 투명도(opacity)를 이용함
+            $('#fadeOut').click(() => {
+                //fadeOut('millis', 함수) : 밀리초내에 사라지고난후 함수를 실행함
+                $('img').fadeOut(3000, result);
+            });
+            $('#fadeIn').click(() => {
+                $('img').fadeIn(3000, result);
+            });
+            $('#fadeToggle').click(() => {
+                $('img').fadeToggle(3000, result); //fadeOut/fadeIn을 번갈아 작업한다
+            });
+            //-------------------------
+            $('#slideUp').click(() => {
+                $('img').slideUp(1000, result);
+            });
+            $('#slideDown').click(() => {
+                $('img').slideDown(1000, result);
+            });
+            $('#slideToggle').click(() => {
+                $('img').slideToggle(1000, result);
+            });
+            //-----------------------
+            //animate(옵션,밀리초,[효과옵션], 함수)
+            //적용할 수 있는 속성은 수자유형의 값을 갖는 css속성만 가능함
+            $('#ani1').click(() => {
+                //$('img').hide('slow');
+                $('img').animate({ opacity: 0 }, 4000, function () {
+                    $(this).css('display', 'none');
+                });
+                //fadeOut
+            });
+            $('#ani2').click(() => {
+                $('img')
+                    .css('display', 'inline')
+                    .animate({ opacity: 1 }, 4000, function () {
+                        // $(this).css('display', 'inline');
+                    });
+            });
+            $('#ani3').click(() => {
+                //이미지를 왼쪽으로 이동시켜서 이미지가 보이지 않도록 처리하기
+                $('img').animate({ marginLeft: -300 }, 3000);
+            });
+            $('#ani4').click(() => {
+                //왼쪽에 감춰진 이미지를 다시 등장시키기
+                $('img').animate({ marginLeft: 0 }, 3000);
+            });
+            $('#ani5').click(() => {
+                //왼쪽 갔다가 오른쪽에 다시 등장하기
+                $('img').animate({ marginLeft: -300 }, 3000)
+                .animate({ marginLeft: 0, width: 350 }, 3000);
+            });
+        </script>
+    </body>
+</html>
+<!-- page10_effect.html -->
