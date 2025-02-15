@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>variable (field, property) - var, let, const</h1>
+        <script>
+            var name = '홍길동'; //전역 변수
+            document.write(name, '<br>');
+            name = '홍수정'; //재할당
+            var name = '김철수'; //[o] 재선언, 재할당
+            // ES6  let, const 권장
+            let age = 22; //let는 동일한 블럭 내에서 재선언 불가능
+            //let age = 33; //[x]
+            age = 23;
+            function foo() {
+                var num = 100; //지역 변수
+                document.write('<hr>');
+                document.write(name, '<br>');
+                document.write(num, '<br>');
+            }
+            //함수 호출
+            foo();
+            // document.write('<h2>', num, '</h2>'); //error
+            // 지역변수는 해당 영역에서만 사용 가능
+
+            //상수를 선언할 때는 const 를 사용
+            const pi = 3.141592;
+            document.write(pi, '<br>');
+            //pi = 5.45678; //[x] 재할당 불가능
+            document.write(pi, '<br>');
+
+            const bar = function () {
+                document.write('<h3>*****' + pi + '******</h3>');
+                //백틱 (`)
+                document.write(`<h2>@@@@@@@${pi}@@@@@@</h2>`);
+            };
+            //함수 호출
+            bar();
+            let name2 = '이영희';
+            let score = 95;
+            let score2 = 80;
+
+            //이름    : 점수
+            document.write(`<h2> ${name2}  : ${(score + score2) / 2}</h2>`);
+
+            let msg = '안녕하세요?<br>' + '반갑습니다!!';
+            document.write(msg, '<br>');
+            let msg2 = `
+                또 안녕하세요? <br>
+                ${name2}님 반갑습니다
+            `;
+            document.write(msg2);
+        </script>
+    </body>
+</html>

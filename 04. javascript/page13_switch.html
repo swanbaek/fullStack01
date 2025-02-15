@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page13_switch</title>
+        <style>
+            #box{
+                background-color: azure;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <div id="box">
+                1. '어느 사이트를 자주 가나요?' 입력창을 띄우세요
+                <br />
+                2. 입력값이 네이버 =>해당 사이트로 이동 <br />
+                구글 => 구글로 이동 <br />
+                다음 => 다음으로 이동<br />
+                window.location.href='url주소' =>해당 사이트로 이동
+            </div>
+            <script>
+                let site = prompt('어느 사이트를 자주 가나요?', 'google');
+                //let box = document.getElementById('box');
+                let box = document.querySelector('#box');
+                //alert(box)
+                box.style.color='tomato'
+                box.style.backgroundColor='beige';
+                //html요소.style.속성명='값'
+                //'-'=>자바스크립트에서는 빼기 연산자
+                //background-color(kebab표기법) ==> backgroundColor (camel표기법 사용)
+
+                let str = null, cr='white';
+                switch (site) {
+                    case 'google':
+                        str = 'google.com';
+                        cr='purple'
+                        break;
+                    case 'naver':
+                        str = 'naver.com';
+                        cr='green'
+                        break;
+                    case 'daum':
+                        str = 'daum.net';
+                        cr='pink'
+                        break;
+                    default:
+                        str = 'w3chools.com';
+                }
+                //window.location.href = 'https://www.' + str;
+                box.style.backgroundColor=cr;
+            </script>
+        </p>
+    </body>
+</html>

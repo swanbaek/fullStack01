@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page17_while.html</title>
+    </head>
+    <body>
+        <h1>제어문 -while loop/ do~ while loop</h1>
+        <script>
+            /*
+                변수선언문 및 초기화식
+                while(조건식){
+                    실행문
+                    증감식
+                }
+            */
+            let index = 1;
+            while (index < 5) {
+                document.write('Hello JavaScript' + index, '<br>');
+                index++;
+            }
+            /*
+                변수 초기화
+                do{
+                    실행문
+                    증감식
+                }while(조건식);
+            */
+            index = 5;
+            do {
+                document.write(`<h3>Hi JavaScript ${index}</h3>`);
+                index -= 2;
+            } while (index > 0);
+        </script>
+    </body>
+</html>

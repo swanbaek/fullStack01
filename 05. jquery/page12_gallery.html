@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>gallery</title>
+        <!-- jquery cdn ------------------------------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------------------------------ -->
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #000;
+            }
+            #container {
+                width: 1000px;
+                margin: 1.5em auto;
+            }
+            #navi {
+                width: 300px;
+                float: left;
+            }
+            #navi ul {
+                height: 460px;
+            }
+            #navi ul li {
+                width: 150px;
+                float: left;
+            }
+            #navi ul li img {
+                border: 3px solid #fff;
+            }
+            #main {
+                width: 650px;
+                float: right;
+            }
+            #main img {
+                border: 3px solid #fff;
+            }
+        </style>
+        <script>
+            //선택요소.before('새로생성한객체') : 선택요소 앞에 새 요소를 붙인다
+            //       .after() : 뒤에 붙인다
+            //       .append() : 맨뒤에 덧붙인다
+            //       .prepend(): 맨앞에 덧붙인다
+            $(function () {
+                //[1] 썸네일 클릭시 이벤트 처리하기 => href로 이동하는 것 막기
+                $('#navi a').click(function () {
+                    //[2] 클릭한 요소(a)의 href속성값 알아내기
+                    let big = $(this).attr('href'); //getter
+                    //[3] 큰 이미지의 src속성값에 넣어주기
+                    // $('#main img').attr('src', big); //setter
+                    //- 기존 큰 이미지 앞에 새로운 이미지를 추가
+
+                    //- 기존 이미지를 서서히 사라지게 효과를 주자(fadeOut)
+                    $('#main img:last').animate({ opacity: 0 }, 1000, function () {
+                        $('#main img').before(`<img src="${big}">`);
+                        $(this).remove();
+                    });
+                    //- fadeOut하고 나면 기존 이미지를 삭제(remove())
+
+                    return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="navi">
+                <ul>
+                    <li>
+                        <a href="images/tree-1.jpg"><img src="images/tree-1-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                    <li>
+                        <a href="images/tree-2.jpg"><img src="images/tree-2-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                    <li>
+                        <a href="images/tree-3.jpg"><img src="images/tree-3-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                    <li>
+                        <a href="images/tree-4.jpg"><img src="images/tree-4-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                    <li>
+                        <a href="images/tree-5.jpg"><img src="images/tree-5-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                    <li>
+                        <a href="images/tree-6.jpg"><img src="images/tree-6-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                    <li>
+                        <a href="images/tree-1.jpg"><img src="images/tree-1-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                    <li>
+                        <a href="images/tree-2.jpg"><img src="images/tree-2-thumb.jpg" alt="tree1" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="main">
+                <img src="images/tree-1.jpg" alt="tree-1" />
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello World</title>
+        <link rel="stylesheet" href="dist/common.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="dist/layout360.css" media="all and (min-width:360px)" />
+        <link rel="stylesheet" type="text/css" href="dist/layout768.css" media="all and (min-width:768px)" />
+        <link rel="stylesheet" type="text/css" href="dist/layout_css.css" media="all and (min-width:1024px)" />
+        <!-- jquery ----------------- -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+
+        <script>
+            $(function () {
+                $('li.sm').hide();
+                $('.menu_open').click(function () {
+                    let href = $(this).attr('href');
+                    //alert(href);
+                    layer_popup(href);
+                });
+            });
+
+            function layer_popup(el) {
+                let $el = $(el);
+                switch (el) {
+                    case '#menu_list':
+                        {
+                            if ($el.hasClass('is-open')) {
+                                $el.fadeOut('fast');
+                                $el.removeClass('is-open');
+                                $('li.sm').hide();
+                            } else {
+                                $el.fadeIn('fast');
+                                $el.addClass('is-open');
+                                $('li.sm').show();
+                            }
+                        }
+                        break;
+                }
+            }
+            //화면 사이즈가 변경됬을때 레이아웃 세팅
+            $(window).resize(function () {
+                //헤더 메뉴리스트 닫기
+                $('#menu_list').removeClass('is-open');
+                $('#menu_list').slideUp();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- header ----------------------------- -->
+            <header class="header">
+                <section class="top_area">
+                    <div class="logo_wrap">
+                        <h1>Hello World</h1>
+                        <a href="#" class="top_title"></a>
+                        <button class="menu btn menu_open" href="#menu_list"></button>
+                    </div>
+                    <!-- ----- -->
+                    <div class="link_wrap">
+                        <div>
+                            <button>로그인</button>
+                            <button>회원가입</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="top_menu" id="menu_list">
+                    <!-- 메뉴 네비게이션 -->
+                    <nav class="nav">
+                        <ul>
+                            <li class="sm"><a href="#"></a><span>공지사항</span></li>
+                            <li class="sm"><a href="#"></a><span>자유게시판</span></li>
+                            <li class="sm"><a href="#"></a><span>갤러리</span></li>
+                        </ul>
+                    </nav>
+                    <!-- 검색 폼 -->
+                    <nav class="nav">
+                        <form action="findResult.jsp" id="searchFrm">
+                            <div class="search">
+                                <div><input type="search" name="keyword" id="find" /></div>
+                                <button class="btn">검 색</button>
+                            </div>
+                        </form>
+                    </nav>
+                </section>
+            </header>
+            <!-- main#content-wrap------------------- -->
+            <main id="content-wrap">
+                <!-- .main_left (게시판) ----------- -->
+                <div class="main_left">
+                    <div class="data_list">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+
+                <!-- .main_right (갤러리) ---------- -->
+                <div class="main_right">
+                    <div class="data_list">
+                        <div class="list-body-grid">
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=1" alt="random1" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc">설명</div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=2" alt="random2" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=3" alt="random3" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=4" alt="random4" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=5" alt="random5" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=6" alt="random6" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- footer--------------------------- -->
+            <footer class="footer">
+                <p class="copy">Copyright &copy; 2025</p>
+            </footer>
+        </div>
+    </body>
+</html>

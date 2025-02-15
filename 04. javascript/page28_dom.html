@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>DOM - 삭제</h1>
+        <ul id="menu">
+            <li>HTML <button onclick="removeItem(this)">Delete</button></li>
+            <li class="css">CSS <button>Delete</button></li>
+            <li id="js">JavaScript <button>Delete</button></li>
+            <li>jQuery <button>Delete</button></li>
+        </ul>
+
+        <script>
+            const removeItem = (btn) => {
+                //alert(btn);
+                //부모 요소를 찾는다
+                let li = btn.parentElement; //삭제할 요소
+                let parent = li.parentNode; //부모 노드
+                parent.removeChild(li);
+            };
+
+            const buttons = document.querySelectorAll('button'); //NodeList
+            //alert(buttons);
+            /*
+            for (let i = 1; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function () {
+                    //alert(this.parentElement.textContent); //this ==> 클릭한 버튼
+                    //클릭한 버튼의 목록을 삭제하세요
+                    let li = this.parentElement;
+                    li.remove(); //최근 api
+                });
+            }
+                */
+
+            //화살표 함수를 사용해서 이벤트 처리를 해보자
+            buttons.forEach(function (btn, i) {
+                btn.addEventListener('click', (evt) => {
+                    //alert(this); 화살표 함수에서의 this는=> 전역객체(window)
+                    //alert(evt.target); //화살표함수에서는 this대신 event.target을 이용
+                    evt.target.style.backgroundColor = 'yellow';
+                    evt.target.parentNode.remove();
+                });
+            });
+        </script>
+    </body>
+</html>

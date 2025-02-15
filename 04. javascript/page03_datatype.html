@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page03_datatype</title>
+    </head>
+    <body>
+        <h1>자바스크립트 자료 유형</h1>
+        <h2>기본 자료형 : number, boolean, string, undefined</h2>
+        <h2>참조형 : object, function,null</h2>
+        <script type="text/javascript">
+            //변수 선언: var, let, const(상수)
+            var a; //undefined
+            window.document.write('a=' + a, '<br>');
+            //window객체: 전역객체. 생략 가능
+            //alert('hi');
+            a = 20; //number - 정수형
+            //typeof 연산자 => 자료형을 알 수 있다.
+            document.write('a=' + a, ' typeof: ', typeof a, '<br>');
+
+            let intNum = 100; //number
+            let doubleNum = 123.456; //number
+            let booleanVar = true; //boolean
+            let nothing = null; //아무것도 아닌 값
+            let str = '이건 문자열';
+            document.write('intNum=' + intNum, ' typeof ', typeof intNum, '<br>');
+            document.write('doubleNum=' + doubleNum, ' typeof ', typeof doubleNum, '<br>');
+            document.write('booleanVar=' + booleanVar, ' typeof ', typeof booleanVar, '<br>');
+            document.write('nothing=' + nothing, ' typeof ', typeof nothing, '<br>');
+            document.write('str=' + str, ' typeof ', typeof str, '<br>');
+            //참조 유형
+            let car = new Object(); //객체 (속성 + 행동양식)
+            car.color = 'red'; //속성
+            car.capacity = 3000;
+
+            car.run = function (km) {
+                document.write('<h2>' + this.color + '색상의 자동차가 시속 ' + km + 'km로 달려요~~</h2>');
+            };
+
+            //함수 호출
+            car.run(100);
+            car.run(60);
+            document.write(car.capacity + 'cc', '<br>');
+            document.write(typeof car, '<br>'); //object
+
+            //json
+            //자바스크립트 객체 표기법  {속성명1:값, 속성명2:값2}==>객체   [ ]==>배열
+            let user = {
+                name: '김철수',
+                age: 22,
+            };
+            //user의 이름과 나이를 출력하세요
+            document.write('이름: ' + user.name + ' 나이: ' + user.age, '<br>');
+            document.write(typeof user, '<br>');
+
+            console.log('**********************Hello**********');
+        </script>
+    </body>
+</html>
+<!-- page03_datatype.html -->

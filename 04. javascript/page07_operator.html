@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>operator</h1>
+        <script>
+            // 3. 논리 연산자 (&& || ^)
+            document.write(3 > 6 && 4 < 8, '<br>');
+            let x = true,
+                y = false;
+            document.write(x && y, '<br>');
+            document.write(x || y, '<br>');
+            document.write(x ^ y, '<br>');
+
+            //4. 논리부정 연산자 (!)
+            //true==>false, false==>true
+            document.write(!x, '<br>');
+            document.write(!y, '<br>');
+
+            //5. 비교연산자
+            let a = 10,
+                b = 5;
+            document.write(a == b, '<br>');
+            document.write(a != b, '<br>'); //값이 다르면 true
+            document.write(a >= b, '<br>');
+            document.write(a <= b, '<br>');
+
+            //문자열도 비교 가능. 아스키코드값으로 변환해서 비교
+            document.write('A' > '1', '<br>');
+        </script>
+        <hr />
+        <script>
+            // 삼항연산자
+            // 변수 = (조건식)? 값1: 값2;
+            //조건식이 true면 값1을 변수에 대입하고
+            //        false면 값2을 변수에 대입
+            let score = 90; //window.prompt('당신의 점수를 입력하세요');
+            let result = score >= 60 ? '합격^^' : '불합격 ㅜㅜ';
+            document.write(result);
+            x = 15;
+            y = 30;
+            let z = 99;
+
+            //삼항 연산자 이용해서 x,y,z 중 최대값을 구해 출력하세요
+            let max = 0;
+            max = x > y ? x : y;
+            max = max > z ? max : z;
+
+            document.write(`<h3>${x},${y},${z} 중 최대값: ${max}</h3>`);
+        </script>
+        <hr />
+        <script>
+            //연산후 할당(대입) 연산자 (+=  -=  *= /= %=)
+            x = 50;
+            document.write(`x=${x} <br>`);
+            x++; //x=x+1;
+            document.write(`x=${x} <br>`);
+            x += 5; //x=x+5
+            document.write(`x=${x} <br>`);
+            x -= 3; //x =x-3
+            document.write(`x=${x} <br>`);
+            x *= 2; //x=x*2
+            document.write(`x=${x} <br>`); //106
+            x /= 2;
+            document.write(`x=${x} <br>`);
+            x %= 10; //x= x%10
+            document.write(`x=${x} <br>`);
+        </script>
+    </body>
+</html>

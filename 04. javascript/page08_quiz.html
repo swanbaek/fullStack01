@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* input중 readonly속성을 가진 요소에 
+            배경색을 silver색으로 설정하세요 */
+            input[readonly] {
+                background-color: silver;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>성적 구하기</h1>
+        <form name="frm">
+            <label for="kor">국 어:</label>
+            <input name="kor" id="kor" type="text" /><br />
+
+            <label for="math">수 학:</label>
+            <input type="text" name="math" id="math" /><br />
+
+            <label for="eng">영 어:</label>
+            <input type="text" name="eng" id="eng" /><br />
+
+            <label for="sum">합 계:</label>
+            <input type="text" name="sum" id="sum" readonly /><br />
+
+            <label for="avg">평 균:</label>
+            <input type="text" name="avg" id="avg" readonly /><br />
+            <br />
+            <input type="button" value="성적 내기" onclick="getGrade()" />
+            <input type="reset" value="다시 쓰기" />
+        </form>
+
+        <script>
+            const getGrade = function () {
+                //1. 사용자가 입력한 국어, 영어, 수학 점수 얻어오기
+                //form이름.input이름.value 로 값을 얻어오자
+                let kor = frm.kor.value;
+                let eng = frm.eng.value;
+                let math = frm.math.value;
+
+                //2. 유효성 체크
+                if (!kor) {
+                    alert('국어 점수를 입력해야 해요');
+                    frm.kor.focus(); //입력 포커스 주기
+                    return; //아래 코드를 수행하지 않는다
+                }
+                if (!math) {
+                    alert('수학 점수 입력하세요');
+                    frm.math.focus();
+                    return;
+                }
+                if (!eng) {
+                    alert('영어 점수 입력하세요');
+                    frm.eng.focus();
+                    return;
+                }
+                //alert(typeof kor); //string
+                //string + string + string ==>문자열 결합을 수행
+                //88 99 11 ==>889911
+                //내장함수: parseInt(변수) => 문자열을 정수로 변환하는 기능을 갖는다
+                //         parseFloat(변수)==> 실수로 변환
+
+                //alert(parseInt(kor) + 8);
+                let sum = parseInt(kor) + parseInt(math) + parseInt(eng);
+                let avg = sum / 3;
+                //form이름.input이름.value='값'
+                //frm.sum.value = 'Hello';
+                frm.sum.value = sum;
+                frm.avg.value = avg.toFixed(2);
+                //숫자.toFixed(2) ==>소수점 이하 2자리까지
+            };
+        </script>
+    </body>
+</html>

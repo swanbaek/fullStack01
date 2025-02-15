@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page20_array.html</title>
+    </head>
+    <body>
+        <h1>배열 - Array</h1>
+        <script>
+            //[방법1 ] literal을 이용해서 배열을 생성
+            //object : { }      array : [ ]
+            let arr = [10, 20, 'Hello', 30.12, true];
+            //alert(arr.length); //배열의 크기를 반환
+            document.write(`arr[0]=${arr[0]}<br>`);
+            document.write(`arr[2]=${arr[2]}<br>`);
+            document.write(`arr[4]=${arr[4]}<br>`);
+
+            //[방법2 ] Array객체를 이용하는 방법
+            let arr2 = new Array();
+            arr2[0] = 'Hi';
+            arr2[1] = 'JavaScript';
+            //push()이용해서 저장
+            arr2.push('Bye~');
+
+            //for루프 이용해서 arr2에 저장된 값들을 출력하세요
+            for (let i = 0; i < arr2.length; i++) {
+                document.write(arr2[i] + ' ');
+            }
+        </script>
+    </body>
+</html>
+<!-- page20_array.html -->

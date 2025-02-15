@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page06_selector</title>
+        <!-- jquery cdn ------------------------------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------------------------------ -->
+        <script>
+            $(function () {
+                // :hidden <==> :visible
+                // 감춰진 li요소 찾아서 등장시키기
+                $('li:hidden').show(3000);
+                //show(밀리초) <==> hide() 함수
+                // 감춰진 ul 요소를 찾아서 3초내로 등장시키세요
+                //5초뒤에 다시 사라지게 하세요
+                $('ul:hidden').show(3000).hide(5000);
+                //$('ul:visible').hide(5000);
+            });
+        </script>
+    </head>
+    <body>
+        <h1>jQuery 보임필터 선택자</h1>
+        <div id="panel">
+            <ul class="navi1">
+                <li>apple</li>
+                <li style="display: none">banana</li>
+                <li>grape</li>
+                <li></li>
+            </ul>
+            <ul class="navi2" style="display: none">
+                <li>tiger</li>
+                <li>lion</li>
+                <li>fox</li>
+                <li></li>
+            </ul>
+        </div>
+    </body>
+</html>
