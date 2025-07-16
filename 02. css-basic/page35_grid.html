@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #wrap {
+                border: 1px solid #ccc;
+                padding: 1em;
+                margin: 1em;
+                display: grid;
+                /* repeat(auto-xxx, minmax(200px, 1fr))은 화면에 맞춰 200px 이상이 될 수 있는 칼럼을 자동으로 여러 개 만들라는 의미
+                즉 컬럼 개수는 화면 너비에 따라 바뀌고, 컬럼 하나당 최소 너비는 200px이란 의미
+                */
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                /*auto-fit: 컬럼을 자동으로 남은 공간에 맞춰 배치
+                 auto-fill: 빈 칸을 유지하며 칼럼 수를 최대한 채움 (빈 칼럼도 존재 가능) */
+            }
+            #wrap2 {
+                border: 1px solid #ccc;
+                padding: 1em;
+                margin: 1em;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            .item {
+                margin: 1em;
+                padding: 1em;
+            }
+            .item:nth-child(2n + 1) {
+                background-color: antiquewhite;
+            }
+            .item:nth-child(2n) {
+                background-color: goldenrod;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+        </div>
+
+        <div id="wrap2">
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+        </div>
+        <hr />
+
+        <div
+            style="
+                width: 650px;
+                height: 200px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 10px;
+                border: 1px solid black;
+            "
+        >
+            <div style="background: lightblue">1</div>
+            <div style="background: lightgreen">2</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>그리드 갤러리 예제</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                padding: 2rem;
+                background-color: #f9f9f9;
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .gallery-item {
+                background: white;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .gallery-item img {
+                width: 100%;
+                /* height: 180px; */
+                object-fit: cover;
+            }
+
+            .gallery-content {
+                padding: 1rem;
+            }
+
+            .gallery-title {
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+
+            .gallery-desc {
+                font-size: 0.95rem;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="margin-bottom: 1rem">그리드 갤러리</h1>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/1.jpg" alt="아이스 카페라떼" />
+                <div class="gallery-content">
+                    <div class="gallery-title">아이스 카페라떼</div>
+                    <div class="gallery-desc">에스프레소에 따뜻한 우유를 섞은 부드러운 커피 음료입니다.</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/2.jpg" alt="카라멜 마키아토" />
+                <div class="gallery-content">
+                    <div class="gallery-title">카라멜 마키아토</div>
+                    <div class="gallery-desc">
+                        우유와 바닐라 시럽에 에스프레소를 얹고 카라멜 소스를 더한 달콤한 커피입니다.
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/4.jpg" alt="귀여운 고양이3" />
+                <div class="gallery-content">
+                    <div class="gallery-title">바닐라 라떼</div>
+                    <div class="gallery-desc">부드러운 라떼에 바닐라 향을 더한 달콤하고 향긋한 음료입니다.</div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/5.jpg" alt="귀여운 고양이3" />
+                <div class="gallery-content">
+                    <div class="gallery-title">바닐라 라떼</div>
+                    <div class="gallery-desc">부드러운 라떼에 바닐라 향을 더한 달콤하고 향긋한 음료입니다.</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/6.jpg" alt="귀여운 고양이3" />
+                <div class="gallery-content">
+                    <div class="gallery-title">체리 스무디</div>
+                    <div class="gallery-desc">진한 체리과즙과 얼음을 블렌딩한 시원하고 상큼한 음료입니다.</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://placehold.co/300x300.png?text=Coffee" alt="아메리카노" />
+                <div class="gallery-content">
+                    <div class="gallery-title">아메리카노</div>
+                    <div class="gallery-desc">진한 에스프레소에 뜨거운 물을 더해 부드럽게 즐기는 기본 커피입니다.</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

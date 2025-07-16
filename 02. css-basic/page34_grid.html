@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #wrap {
+                border: 1px solid #ccc;
+                display: grid;
+                /* grid-template-columns: 1fr 1fr 1fr; 1:1:1 컬럼 3개 */
+                grid-template-columns: repeat(3, 1fr); /*너비가 같은 컬럼 3개*/
+                grid-template-rows: minmax(100px, auto);
+                /*행높이는 최소100px. 줄 높이보다 내용이 더 많아도 표시할 수 있을 만큼 높이가 늘어남*/
+            }
+            .item {
+                margin: 1em;
+                padding: 1em;
+            }
+            .item:nth-child(2n + 1) {
+                background-color: antiquewhite;
+            }
+            .item:nth-child(2n) {
+                background-color: goldenrod;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">눈이 부시게 푸르른 날은 그리운 사람을 그리워하자</div>
+            <div class="item">
+                눈이 부시게 푸르른 날은 그리운 사람을 그리워하자<br />눈이 부시게 푸르른 날은 그리운 사람을 그리워하자
+                <br />눈이 부시게 푸르른 날은 그리운 사람을 그리워하자
+            </div>
+        </div>
+    </body>
+</html>
